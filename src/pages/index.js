@@ -5,11 +5,13 @@ import Helmet from "react-helmet"
 
 import Bio from "../components/Bio"
 import { rhythm } from "../utils/typography"
+import styles from './index.module.css';
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const posts = get(this, "props.data.allMarkdownRemark.edges")
+    css.global('html, body',  { color: 'red' })
 
     return (
       <div>

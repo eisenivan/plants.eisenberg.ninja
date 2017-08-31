@@ -9,6 +9,8 @@
   "dependencies": {
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
+    "gatsby-plugin-emotion": "^1.1.4",
+    "gatsby-plugin-glamor": "^1.6.6",
     "gatsby-plugin-google-analytics": "^1.0.4",
     "gatsby-plugin-manifest": "^1.0.4",
     "gatsby-plugin-offline": "^1.0.4",
@@ -17,7 +19,7 @@
     "gatsby-plugin-sharp": "^1.6.2",
     "gatsby-plugin-typography": "^1.7.6",
     "gatsby-remark-copy-linked-files": "^1.5.2",
-    "gatsby-remark-images": "^1.5.4",
+    "gatsby-remark-images": "^1.5.8",
     "gatsby-remark-prismjs": "^1.2.1",
     "gatsby-remark-responsive-iframe": "^1.4.3",
     "gatsby-remark-smartypants": "^1.4.3",
