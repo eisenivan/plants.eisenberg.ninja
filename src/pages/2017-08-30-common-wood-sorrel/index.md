@@ -11,4 +11,4 @@ Looks like a clover, but with perfect heart shaped leaves. We have this growing 
 
 When I took my picture the sorrel's little yellow flowers had already died off, you can still *kind of* see them in the picture. They have long seed pods, but really the most identifiable thing about the wood sorrel is the perfect heart shaped leaves, and sour flavor.
 
-If you're interested, here is the [Wikipedia article](https://en.wikipedia.org/wiki/Oxalis_stricta#Culinary_uses)
+If you're interested, here is a link to the [Wikipedia article.](https://en.wikipedia.org/wiki/Oxalis_stricta#Culinary_uses)
