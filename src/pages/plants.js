@@ -1,21 +1,28 @@
-import React from "react"
-import Link from "gatsby-link"
-import get from "lodash/get"
-import Helmet from "react-helmet"
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import get from 'lodash/get'
 
-import Bio from "../components/Bio"
-import { rhythm } from "../utils/typography"
-import styles from './index.module.css';
+import Bio from '../components/Bio'
+import { rhythm, scale } from '../utils/typography'
 
-class BlogIndex extends React.Component {
+class PlantsTemplate extends React.Component {
   render() {
-    const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const posts = get(this, "props.data.allMarkdownRemark.edges")
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <div>
-        <Helmet title={get(this, "props.data.site.siteMetadata.title")} />
-        <Bio />
+        <Helmet title={siteTitle} />
+        <p
+          style={{
+            ...scale(-1 / 5),
+            display: 'block',
+            marginBottom: rhythm(1),
+            marginTop: rhythm(-1),
+          }}
+        >
+        </p>
         {posts.map(post => {
           if (post.node.path !== "/404/") {
             const title = get(post, "node.frontmatter.title") || post.node.path
@@ -42,31 +49,38 @@ class BlogIndex extends React.Component {
             )
           }
         })}
+        <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
+        <Bio />
       </div>
     )
   }
 }
 
-BlogIndex.propTypes = {
-  route: React.PropTypes.object,
-}
-
-export default BlogIndex
+export default PlantsTemplate
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query PlantsQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {
-      frontmatter: {
-        published: {
-          eq: true
+    allMarkdownRemark (
+      sort: {
+        order: DESC, fields: [frontmatter___date]},
+        limit: 20,
+        filter: {
+          frontmatter: {
+            plants: {
+              eq: true
+            }
+          }
         }
-      }
-    }) {
+      ){
       edges {
         node {
           excerpt

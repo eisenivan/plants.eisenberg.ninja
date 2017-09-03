@@ -3,6 +3,7 @@ title: Goldenrod
 date: "2017-09-01"
 path: "/goldenrod/"
 plants: true
+published: true
 ---
 
 ![Goldenrod flowers in Milwaukee, Wisconsin](./goldenrod.jpg)

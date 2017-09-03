@@ -3,6 +3,7 @@ title: Lemon Balm
 date: "2017-08-29"
 path: "/lemon-balm/"
 plants: true
+published: true
 ---
 
 ![Top view of lemon balm in Milwaukee, Wisconsin](./lemon-balm.jpg)

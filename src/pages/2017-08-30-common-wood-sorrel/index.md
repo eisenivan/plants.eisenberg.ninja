@@ -3,6 +3,8 @@ title: Common Wood Sorrel
 date: "2017-08-30"
 path: "/common-wood-sorrel/"
 plants: true
+published: true
+edible: true
 ---
 
 ![Common wood sorrel in Milwaukee, Wisconsin](./common-wood-sorrel.jpg)

@@ -3,6 +3,8 @@ title: Nightshade
 date: "2017-08-28"
 path: "/nightshade/"
 plants: true
+published: true
+poisonous: true
 ---
 
 ![Bittersweet nightshade fruit in Milwaukee, Wisconsin](./nightshade.jpg)

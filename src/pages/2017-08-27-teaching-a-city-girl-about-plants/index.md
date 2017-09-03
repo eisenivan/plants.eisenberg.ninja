@@ -2,6 +2,7 @@
 title: Teaching A City Girl About Plants
 date: "2017-08-27"
 path: "/teaching-a-city-girl-about-plants/"
+published: true
 ---
 
 ![Ivan and Emilia](./ivan-and-emilia.jpg)
