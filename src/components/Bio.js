@@ -27,7 +27,9 @@ class Bio extends React.Component {
             borderRadius: '50%',
           }}
         />
-        Ivan Eisenberg is a computer programmer that wants to teach his daughter about nature. He plays in <a href="http://paythedevil.us">a band</a> and has a <a href="https://twitter.com/ivaneisenberg">Twitter account</a>.
+        Ivan Eisenberg is a computer programmer that wants to teach his daughter
+        about nature. He plays in <a href="http://paythedevil.us">a band</a> and
+        has a <a href="https://twitter.com/ivaneisenberg">Twitter account</a>.
       </p>
     )
   }

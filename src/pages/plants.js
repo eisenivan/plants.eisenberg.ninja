@@ -5,10 +5,11 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
+import Styles from './plants.styles'
 
 class PlantsTemplate extends React.Component {
   render() {
-    const posts = get(this, "props.data.allMarkdownRemark.edges")
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -21,34 +22,23 @@ class PlantsTemplate extends React.Component {
             marginBottom: rhythm(1),
             marginTop: rhythm(-1),
           }}
-        >
-        </p>
-        {posts.map(post => {
-          if (post.node.path !== "/404/") {
-            const title = get(post, "node.frontmatter.title") || post.node.path
-            return (
-              <div>
-                <h3
-                  key={post.node.frontmatter.path}
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: "none" }}
-                    to={post.node.frontmatter.path}
-                  >
-                    {post.node.frontmatter.title}
-                  </Link>
-                </h3>
-                <small>
-                  {post.node.frontmatter.date}
-                </small>
-                <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              </div>
-            )
-          }
-        })}
+        />
+        <div style={Styles.gridWrapper}>
+          {posts.map(post => {
+            if (
+              post.node.path !== '/404/' &&
+              get(post, 'node.frontmatter.img.childImageSharp.responsiveSizes.src')
+            ) {
+              const title =
+                get(post, 'node.frontmatter.title') || post.node.path
+              return (
+                <Link style={Styles.gridItem} to={post.node.frontmatter.path}>
+                  <img style={Styles.image} src={post.node.frontmatter.img.childImageSharp.responsiveSizes.src} />
+                </Link>
+              )
+            }
+          })}
+        </div>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -69,27 +59,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark (
-      sort: {
-        order: DESC, fields: [frontmatter___date]},
-        limit: 20,
-        filter: {
-          frontmatter: {
-            plants: {
-              eq: true
-            }
-          }
-        }
-      ){
+    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 20, filter: {frontmatter: {plants: {eq: true}}}) {
       edges {
         node {
           excerpt
           frontmatter {
             path
             date(formatString: "DD MMMM, YYYY")
-          }
-          frontmatter {
             title
+            img {
+              childImageSharp {
+                responsiveSizes(maxWidth: 640) {
+                  src
+                }
+              }
+            }
           }
         }
       }

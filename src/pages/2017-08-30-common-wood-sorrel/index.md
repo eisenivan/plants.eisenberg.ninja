@@ -3,6 +3,7 @@ title: Common Wood Sorrel
 date: "2017-08-30"
 path: "/common-wood-sorrel/"
 plants: true
+img: './common-wood-sorrel.jpg'
 published: true
 edible: true
 ---

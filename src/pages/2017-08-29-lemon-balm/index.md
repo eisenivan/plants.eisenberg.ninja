@@ -3,6 +3,7 @@ title: Lemon Balm
 date: "2017-08-29"
 path: "/lemon-balm/"
 plants: true
+img: './lemon-balm.jpg'
 published: true
 ---
 

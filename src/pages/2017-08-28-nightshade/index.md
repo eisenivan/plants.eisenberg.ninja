@@ -3,6 +3,7 @@ title: Nightshade
 date: "2017-08-28"
 path: "/nightshade/"
 plants: true
+img: './nightshade.jpg'
 published: true
 poisonous: true
 ---
