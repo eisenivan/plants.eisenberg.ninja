@@ -1,0 +1,16 @@
+:global(.c-photo-grid-container) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+@media(min-width: 1024px) {
+  :global(.c-photo-grid-container) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+:global(.c-photo-grid-container__grid-item) {
+  text-decoration: none;
+  box-shadow: none;
+}
