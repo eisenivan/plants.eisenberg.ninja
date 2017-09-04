@@ -33,13 +33,26 @@ class PlantsTemplate extends React.Component {
           {posts.map(post => {
             if (
               post.node.path !== '/404/' &&
-              get(post, 'node.frontmatter.coverImage.childImageSharp.responsiveSizes.src')
+              get(
+                post,
+                'node.frontmatter.coverImage.childImageSharp.responsiveSizes.src'
+              )
             ) {
               const title =
                 get(post, 'node.frontmatter.title') || post.node.path
               return (
-                <Link key={`${post.node.frontmatter.path}-post`} className="c-photo-grid-container__grid-item" to={post.node.frontmatter.path}>
-                  <img style={Styles.image} src={post.node.frontmatter.coverImage.childImageSharp.responsiveSizes.src} />
+                <Link
+                  key={`${post.node.frontmatter.path}-post`}
+                  className="c-photo-grid-container__grid-item"
+                  to={post.node.frontmatter.path}
+                >
+                  <img
+                    style={Styles.image}
+                    src={
+                      post.node.frontmatter.coverImage.childImageSharp
+                        .responsiveSizes.src
+                    }
+                  />
                 </Link>
               )
             }
@@ -65,7 +78,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 20, filter: {frontmatter: {plants: {eq: true}}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 20
+      filter: { frontmatter: { plants: { eq: true } } }
+    ) {
       edges {
         node {
           excerpt
