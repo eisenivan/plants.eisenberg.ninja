@@ -5,7 +5,20 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
-import Styles from './plants.styles'
+
+const Styles = {}
+
+Styles.gridWrapper = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridGap: '10px',
+  marginTop: '20px',
+}
+
+Styles.image = {
+  marginBottom: '0px',
+  maxWidth: '100%',
+}
 
 class PlantsTemplate extends React.Component {
   render() {
@@ -15,25 +28,18 @@ class PlantsTemplate extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        />
-        <div style={Styles.gridWrapper}>
+        <h1>Plant Grid</h1>
+        <div className="c-photo-grid-container">
           {posts.map(post => {
             if (
               post.node.path !== '/404/' &&
-              get(post, 'node.frontmatter.img.childImageSharp.responsiveSizes.src')
+              get(post, 'node.frontmatter.coverImage.childImageSharp.responsiveSizes.src')
             ) {
               const title =
                 get(post, 'node.frontmatter.title') || post.node.path
               return (
-                <Link style={Styles.gridItem} to={post.node.frontmatter.path}>
-                  <img style={Styles.image} src={post.node.frontmatter.img.childImageSharp.responsiveSizes.src} />
+                <Link key={`${post.node.frontmatter.path}-post`} className="c-photo-grid-container__grid-item" to={post.node.frontmatter.path}>
+                  <img style={Styles.image} src={post.node.frontmatter.coverImage.childImageSharp.responsiveSizes.src} />
                 </Link>
               )
             }
@@ -67,7 +73,7 @@ export const pageQuery = graphql`
             path
             date(formatString: "DD MMMM, YYYY")
             title
-            img {
+            coverImage {
               childImageSharp {
                 responsiveSizes(maxWidth: 640) {
                   src

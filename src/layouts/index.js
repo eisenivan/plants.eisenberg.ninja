@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import { Container } from 'react-responsive-grid'
 
 import { rhythm, scale } from '../utils/typography'
+import './index.module.css'
 
 class Template extends React.Component {
   render() {
@@ -63,12 +64,6 @@ class Template extends React.Component {
       </Container>
     )
   }
-}
-
-Template.propTypes = {
-  children: React.PropTypes.function,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
 }
 
 export default Template
