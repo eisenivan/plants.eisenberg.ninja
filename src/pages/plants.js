@@ -79,7 +79,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___title] }
       limit: 20
       filter: { frontmatter: { plants: { eq: true } } }
     ) {

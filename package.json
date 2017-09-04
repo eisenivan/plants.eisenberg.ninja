@@ -27,11 +27,10 @@
     "gatsby-transformer-remark": "^1.7.1",
     "gatsby-transformer-sharp": "^1.6.1",
     "lodash": "^4.15.0",
+    "object-assign": "^4.1.1",
     "react-responsive-grid": "^0.3.3",
     "typeface-merriweather": "^0.0.35",
     "typeface-montserrat": "^0.0.37",
-    "typography-theme-lincoln": "^0.15.11",
-    "typography-theme-twin-peaks": "^0.15.11",
     "typography-theme-wordpress-2016": "^0.15.1"
   },
   "devDependencies": {
@@ -55,15 +54,19 @@
     "last 2 versions"
   ],
   "presets": [
-    ["env", {
-      "targets": {
-        "browsers": [
-          "> 1%",
-          "IE >= 9",
-          "last 2 versions"
-        ]
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "IE >= 9",
+            "last 2 versions"
+          ]
+        },
+        "debug": true
       }
-    }]
+    ]
   ],
   "scripts": {
     "dev": "gatsby develop",

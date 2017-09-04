@@ -1,6 +1,5 @@
 :global(.c-photo-grid-container) {
   display: grid;
-  grid-auto-rows: minmax(420px, auto);
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 }
