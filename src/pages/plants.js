@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 const Styles = {}
 
@@ -12,24 +12,24 @@ Styles.gridWrapper = {
   display: 'grid',
   gridTemplateColumns: 'repeat(2, 1fr)',
   gridGap: '10px',
-  marginTop: '20px',
+  marginTop: '20px'
 }
 
 Styles.image = {
   marginBottom: '0px',
-  maxWidth: '100%',
+  maxWidth: '100%'
 }
 
 class PlantsTemplate extends React.Component {
-  render() {
+  render () {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <div>
         <Helmet title={siteTitle} />
-        <h1>Plant Grid</h1>
-        <div className="c-photo-grid-container">
+        <h1>Find a Plant</h1>
+        <div className='c-photo-grid-container'>
           {posts.map(post => {
             if (
               post.node.path !== '/404/' &&
@@ -43,8 +43,11 @@ class PlantsTemplate extends React.Component {
               return (
                 <Link
                   key={`${post.node.frontmatter.path}-post`}
-                  className="c-photo-grid-container__grid-item"
+                  className='c-photo-grid-container__grid-item'
                   to={post.node.frontmatter.path}
+                  style={{
+                    textAlign: 'center'
+                  }}
                 >
                   <img
                     style={Styles.image}
@@ -53,6 +56,7 @@ class PlantsTemplate extends React.Component {
                         .responsiveSizes.src
                     }
                   />
+                  {title}
                 </Link>
               )
             }
@@ -60,7 +64,7 @@ class PlantsTemplate extends React.Component {
         </div>
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(1)
           }}
         />
         <Bio />
